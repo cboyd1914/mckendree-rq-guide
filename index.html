@@ -1,0 +1,277 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="description" content="Step-by-step RQ+ setup for CWLOA members attending the October 17, 2026 McKendree clinic. Independent guide, not an official CWLOA or RefQuest publication."><title>RefQuest Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700;800&family=Open+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: one narrow reading column on a whiteboard ground, a referee-stripe band up top, steps as a numbered run down the left edge. */
+:root {
+  --bg: #ffffff;
+  --surface: #f6f5f1;
+  --ink: #141414;
+  --muted: #5b5a55;
+  --rule: #dcdad2;
+  --gold: #dab844;
+  --gold-ink: #7a5f0c;
+  --stripe-a: #141414;
+  --stripe-b: #ffffff;
+  --on-gold: #141414;
+  --display: "Roboto Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "Open Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121212; --surface: #1c1c1b; --ink: #f1efe8; --muted: #a9a69d; --rule: #34332f;
+  --gold: #dab844; --gold-ink: #e6c65a; --stripe-a: #f1efe8; --stripe-b: #121212; --on-gold: #141414; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #121212; --surface: #1c1c1b; --ink: #f1efe8; --muted: #a9a69d; --rule: #34332f;
+  --gold: #dab844; --gold-ink: #e6c65a; --stripe-a: #f1efe8; --stripe-b: #121212; --on-gold: #141414; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.6 var(--body); }
+.stripes { height: 14px; background: repeating-linear-gradient(90deg, var(--stripe-a) 0 14px, var(--stripe-b) 14px 28px); border-bottom: 3px solid var(--gold); }
+.wrap { max-width: 720px; margin: 0 auto; padding-inline: 20px; }
+header.top { padding-block: 28px 8px; }
+.eyebrow { font: 700 13px/1.2 var(--display); letter-spacing: .12em; text-transform: uppercase; color: var(--gold-ink); margin: 0 0 10px; }
+h1 { font: 800 clamp(34px, 7vw, 54px)/1.02 var(--display); margin: 0 0 14px; text-wrap: balance; letter-spacing: -.01em; }
+.lede { font-size: 18px; color: var(--muted); margin: 0 0 18px; max-width: 34em; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); margin: 0 0 22px; padding: 0; list-style: none; }
+.meta strong { color: var(--ink); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-block; font: 700 15px/1 var(--display); letter-spacing: .06em; text-transform: uppercase; padding: 14px 18px; text-decoration: none; border: 2px solid var(--ink); color: var(--ink); background: transparent; }
+.btn.primary { background: var(--gold); border-color: var(--gold); color: var(--on-gold); }
+.btn:focus-visible, input:focus-visible + label, a:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+.quick { margin-block: 34px; background: var(--surface); border-top: 4px solid var(--ink); padding: 20px 20px 8px; }
+.quick h2 { font: 800 22px/1.2 var(--display); text-transform: uppercase; letter-spacing: .03em; margin: 0 0 4px; }
+.quick p { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+.quick ol { margin: 0 0 12px; padding-left: 22px; }
+.quick li { margin-bottom: 6px; }
+
+nav.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+nav.jump a { font: 700 13px/1 var(--display); letter-spacing: .05em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid var(--rule); padding: 8px 10px; }
+nav.jump a:hover { border-color: var(--gold); }
+
+.step { display: grid; grid-template-columns: 52px minmax(0,1fr); gap: 16px; padding-block: 26px; border-top: 1px solid var(--rule); }
+.num { font: 800 40px/1 var(--display); color: var(--gold-ink); text-align: right; padding-top: 2px; font-variant-numeric: tabular-nums; }
+.step h2 { font: 800 26px/1.15 var(--display); margin: 0 0 4px; text-wrap: balance; }
+.why { margin: 0 0 12px; color: var(--muted); }
+.step ol { margin: 0 0 12px; padding-left: 20px; }
+.step li { margin-bottom: 7px; }
+.fine { font-size: 14px; color: var(--muted); margin: 0 0 12px; }
+.note { border-left: 4px solid var(--gold); background: var(--surface); padding: 12px 14px; font-size: 15px; margin-top: 6px; }
+.contacts { margin: 0; display: grid; gap: 12px; }
+.contacts div { border-bottom: 1px solid var(--rule); padding-bottom: 10px; }
+.contacts dt { font-weight: 700; }
+.contacts dd { margin: 2px 0 0; }
+.addr { font-weight: 600; user-select: all; overflow-wrap: anywhere; }
+
+.practice { margin-block: 30px; border: 2px solid var(--ink); padding: 20px; }
+.practice h2 { font: 800 24px/1.2 var(--display); text-transform: uppercase; margin: 0 0 4px; }
+.practice p { margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+.practice ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.practice li { display: flex; gap: 12px; align-items: flex-start; }
+.practice input { width: 22px; height: 22px; accent-color: var(--gold); flex: none; margin-top: 2px; }
+.practice input:checked + label { color: var(--muted); text-decoration: line-through; }
+.progress { font: 700 14px/1 var(--display); letter-spacing: .06em; text-transform: uppercase; margin-top: 14px; color: var(--gold-ink); }
+
+footer { padding-block: 24px 40px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--rule); margin-top: 20px; }
+footer p { margin: 0 0 8px; }
+@media (max-width: 480px) { .step { grid-template-columns: 34px minmax(0,1fr); gap: 10px; } .num { font-size: 30px; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+html { scroll-behavior: smooth; }
+</style>
+
+</head><body><div class="stripes" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">McKendree clinic · October 17, 2026</p>
+    <h1>Get your RefQuest account game&#8209;ready</h1>
+    <p class="lede">A step-by-step guide to RQ+ for CWLOA members attending the McKendree clinic. Work through it on your phone before clinic day.</p>
+    <ul class="meta">
+      <li><strong>For:</strong> CWLOA members new to RQ+</li>
+      <li><strong>Time:</strong> about 15 minutes</li>
+      <li><strong>Revised:</strong> October 5, 2026</li>
+    </ul>
+    <div class="actions">
+      <a class="btn primary" href="https://plus.refquest.com" target="_blank" rel="noopener">Open RQ+</a>
+      <a class="btn" href="refquest-field-guide.pdf" target="_blank" rel="noopener">PDF version</a>
+      <a class="btn" href="qr/">Share with QR</a>
+    </div>
+  </header>
+
+  <section class="quick" aria-labelledby="quick-h">
+    <h2 id="quick-h">Before you arrive</h2>
+    <p>Seven things to have done. Each one links to its step below.</p>
+    <ol><li><a href="#sign-in" style="color:inherit">Sign in to RQ+ and open the CWLOA portal.</a></li><li><a href="#profile" style="color:inherit">Check that your phone number and email are current.</a></li><li><a href="#calendar" style="color:inherit">Block every date you cannot work, and share blocks with each assigning group.</a></li><li><a href="#mileage" style="color:inherit">Set a daily mileage limit, or leave it blank for no limit.</a></li><li><a href="#assignments" style="color:inherit">Find where your assignments show up.</a></li><li><a href="#pay" style="color:inherit">Open RQ Pay and finish setup yourself, inside RQ+.</a></li><li><a href="#help" style="color:inherit">Save the support contacts in your phone.</a></li></ol>
+  </section>
+
+  <nav class="jump" aria-label="Steps">
+    <a href="#sign-in">Sign in</a><a href="#profile">Contact info</a><a href="#calendar">Calendar</a><a href="#copy-blocks">Copy blocks</a><a href="#mileage">Mileage</a><a href="#assignments">Assignments</a><a href="#pay">RQ Pay</a><a href="#help">Help</a>
+    <a href="#practice">Practice</a>
+  </nav>
+
+  <section class="step" id="sign-in">
+  <div class="num" aria-hidden="true">1</div>
+  <div class="step-body">
+    <h2>Sign in and open the CWLOA portal</h2>
+    <p class="why">Everything else in this guide starts here.</p>
+    
+<ol>
+  <li>Go to <strong>plus.refquest.com</strong> and sign in with the email address CWLOA has on file for you.</li>
+  <li>Forgot your password? Use the reset link on the sign-in screen. Never send your password to a clinician, assigner, or anyone else.</li>
+  <li>If you work for more than one group, RQ+ shows more than one portal. Pick <strong>CWLOA</strong> for anything about this clinic.</li>
+</ol>
+
+    <aside class="note">Do this before clinic day. A password reset on the field eats time you need for warm-ups.</aside>
+  </div>
+</section>
+<section class="step" id="profile">
+  <div class="num" aria-hidden="true">2</div>
+  <div class="step-body">
+    <h2>Check your contact details</h2>
+    <p class="why">Assigners use these to reach you about game changes.</p>
+    
+<ol>
+  <li>Click your avatar in the upper right corner.</li>
+  <li>Open <strong>Profile &amp; Settings</strong>.</li>
+  <li>Confirm your phone number and email. Fix anything old and save.</li>
+</ol>
+
+    
+  </div>
+</section>
+<section class="step" id="calendar">
+  <div class="num" aria-hidden="true">3</div>
+  <div class="step-body">
+    <h2>Block the dates you can't work</h2>
+    <p class="why">An open date tells an assigner you are available. Blocks prevent turnbacks.</p>
+    
+<ol>
+  <li>Click <strong>ASSIGN</strong>, then <strong>CALENDAR</strong>.</li>
+  <li>Select the <strong>+</strong> icon in the bottom left of the day you want to block.</li>
+  <li>Choose <strong>FIRM</strong> or <strong>PROVISIONAL</strong> as the block type.</li>
+  <li>Add block notes and preferences if you need them.</li>
+  <li>Toggle ON (orange) every account that should see this block.</li>
+  <li>Click <strong>CREATE</strong>.</li>
+</ol>
+<p class="fine">You cannot place a firm block on a day where you already have an active assignment in that account.</p>
+
+    <aside class="note">A block only counts for the groups you share it with. One assigner put it this way: the date may have been blocked, but it was not blocked to me, so it shows as though you are open.</aside>
+  </div>
+</section>
+<section class="step" id="copy-blocks">
+  <div class="num" aria-hidden="true">4</div>
+  <div class="step-body">
+    <h2>Copy your blocks to every assigning group</h2>
+    <p class="why">If you work several conferences, this saves you from entering each block twice.</p>
+    
+<ol>
+  <li>On the Calendar page, find the icon near the top right that looks like a raised rectangle with dots on its left and bottom edges.</li>
+  <li>Click it to open block copying.</li>
+  <li>Select the assigning group you are copying <em>from</em>.</li>
+  <li>Toggle ON (orange) the group you are copying <em>to</em>.</li>
+  <li>Click <strong>UPDATE BLOCKS</strong>.</li>
+  <li>Repeat for each group, then open the destination calendar and confirm the blocks are there.</li>
+</ol>
+
+    
+  </div>
+</section>
+<section class="step" id="mileage">
+  <div class="num" aria-hidden="true">5</div>
+  <div class="step-body">
+    <h2>Set your daily mileage limits</h2>
+    <p class="why">This tells assigners how far you are willing to drive on a given day.</p>
+    
+<ol>
+  <li>Click your avatar in the upper right corner.</li>
+  <li>Open <strong>Profile &amp; Settings</strong>, then <strong>Mileage Limits</strong>.</li>
+  <li>Set a limit for each day of the week, for each assigning group, in each portal.</li>
+  <li>Click <strong>Save Changes</strong> before you switch portals or leave the page.</li>
+</ol>
+<p class="fine">The default is no limit. Leave a day blank if you will travel any distance that day.</p>
+
+    <aside class="note"><strong>Mileage limit is not travel pay.</strong> The limit only controls which games you are offered. Travel money, if any, is set by the group that pays the game. RQ+ does not set it, and this guide does not quote rates.</aside>
+  </div>
+</section>
+<section class="step" id="assignments">
+  <div class="num" aria-hidden="true">6</div>
+  <div class="step-body">
+    <h2>Find and answer your assignments</h2>
+    <p class="why">Assigners build crews around your answers, so answer early.</p>
+    
+<ol>
+  <li>New offers and accepted games appear in RQ+, and RQ+ also sends email notices.</li>
+  <li>Open each offer. Check the date, start time, time zone, site, and your crew.</li>
+  <li>Accept or decline in RQ+ by the deadline your assigner sets.</li>
+  <li>Watch for game-change notices. Re-open the game whenever one arrives.</li>
+  <li>Can't work a game you accepted? Contact your assigner right away. Follow that group's turnback rules.</li>
+</ol>
+
+    <aside class="note">Response deadlines and turnback penalties come from each assigning group. Check their RQ+ Resources, not this page.</aside>
+  </div>
+</section>
+<section class="step" id="pay">
+  <div class="num" aria-hidden="true">7</div>
+  <div class="step-body">
+    <h2>Set up RQ Pay</h2>
+    <p class="why">RQ Pay sends game fees to your bank by direct deposit.</p>
+    
+<ol>
+  <li>Open <strong>RQ Pay</strong> in RQ+ and follow the enrollment steps on screen.</li>
+  <li>Enter your bank details yourself, inside RQ+ only. RefQuest confirms new accounts with two small test deposits.</li>
+  <li>Look for your payment history inside RQ Pay to see what has been paid. RQ Pay also produces your 1099.</li>
+</ol>
+
+    <aside class="note">Never send bank, tax, or Social Security details by email or text, and never to a clinician. Pay timing and amounts come from the group that pays the game.</aside>
+  </div>
+</section>
+<section class="step" id="help">
+  <div class="num" aria-hidden="true">8</div>
+  <div class="step-body">
+    <h2>Know who to ask</h2>
+    <p class="why">Sending each question to the right place saves a round trip.</p>
+    
+<dl class="contacts">
+  <div><dt>Can't log in, or a screen won't work</dt><dd>Click <strong>SUPPORT</strong> in the bottom left corner of any RQ+ page for FAQs, or email <span class="addr">support@refquest.com</span></dd></div>
+  <div><dt>A payment question about RQ Pay</dt><dd>Email <span class="addr">pay@refquest.com</span></dd></div>
+  <div><dt>Assignments, turnbacks, fees, travel money</dt><dd>Your assigner or the CWLOA contact listed in RQ+ Resources</dd></div>
+  <div><dt>Anything about the October 17 clinic</dt><dd>Carlos Boyd, head clinician</dd></div>
+</dl>
+
+    <aside class="note">Assigners ask that platform questions go to RQ+ support first. One called it the fastest way to get an answer.</aside>
+  </div>
+</section>
+
+  <section class="practice" id="practice" aria-labelledby="practice-h">
+    <h2 id="practice-h">Clinic practice run</h2>
+    <p>We will do these together in the classroom. Check each one off as you go. Nobody will ask to see your account.</p>
+    <ul><li><input type="checkbox" id="p1"><label for="p1">Open RQ+ and switch to the CWLOA portal.</label></li><li><input type="checkbox" id="p2"><label for="p2">Find Profile &amp; Settings and read back your phone number.</label></li><li><input type="checkbox" id="p3"><label for="p3">Create a sample provisional block on any open date, then delete it.</label></li><li><input type="checkbox" id="p4"><label for="p4">Open the block copy icon and name the groups you would copy to.</label></li><li><input type="checkbox" id="p5"><label for="p5">Find Mileage Limits. Say what limit you would set for a Saturday.</label></li><li><input type="checkbox" id="p6"><label for="p6">Find where your assignments appear.</label></li><li><input type="checkbox" id="p7"><label for="p7">Find RQ Pay. Do not open bank screens in class.</label></li><li><input type="checkbox" id="p8"><label for="p8">Find the SUPPORT button and save support@refquest.com.</label></li></ul>
+    <div class="progress" id="progress" aria-live="polite">0 of 8 done</div>
+  </section>
+
+  <footer>
+    <p>An independent guide from Carlos Boyd, head clinician for the October 17, 2026 McKendree clinic. It is not published or endorsed by CWLOA or RefQuest. Screens change. If RQ+ looks different from these steps, trust RQ+ and contact support.</p>
+    <p>Revised October 5, 2026.</p>
+  </footer>
+</div>
+<script>
+(function(){
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.practice input'));
+  var out = document.getElementById('progress');
+  var KEY = 'rq-practice';
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  function tally(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    out.textContent = n === boxes.length ? 'All ' + n + ' done. You are ready.' : n + ' of ' + boxes.length + ' done';
+  }
+  boxes.forEach(function(b){
+    if (saved[b.id]) b.checked = true;
+    b.addEventListener('change', function(){
+      saved[b.id] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      tally();
+    });
+  });
+  tally();
+})();
+</script>
+</body></html>

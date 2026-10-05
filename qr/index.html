@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RefQuest Field Guide QR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700;800&family=Open+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: a handout poster. Stripe band, headline left, framed QR right; stacks on phones. */
+:root {
+  --bg: #ffffff; --surface: #f6f5f1; --ink: #141414; --muted: #5b5a55; --rule: #dcdad2;
+  --gold: #dab844; --gold-ink: #7a5f0c;
+  --display: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+  --body: "Open Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 17px/1.55 var(--body); }
+.stripes { height: 16px; background: repeating-linear-gradient(90deg, var(--ink) 0 16px, #fff 16px 32px); border-bottom: 4px solid var(--gold); }
+.poster { max-width: 1040px; margin: 0 auto; padding: 40px 24px 28px; display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); gap: 44px; align-items: center; }
+.eyebrow { font: 700 14px/1.2 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--gold-ink); margin: 0 0 12px; }
+h1 { font: 800 clamp(38px, 6vw, 64px)/1 var(--display); margin: 0 0 16px; text-wrap: balance; }
+h1 span { background: linear-gradient(transparent 62%, var(--gold) 62%); }
+.lede { font-size: 19px; color: var(--muted); margin: 0 0 22px; max-width: 30em; }
+.inside { border-top: 3px solid var(--ink); padding-top: 14px; }
+.inside h2 { font: 800 16px/1.2 var(--display); letter-spacing: .1em; text-transform: uppercase; margin: 0 0 10px; }
+.inside ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 22px; }
+.inside li { padding-left: 18px; position: relative; font-size: 15.5px; }
+.inside li::before { content: ""; position: absolute; left: 0; top: .55em; width: 9px; height: 9px; background: var(--gold); }
+.card { background: var(--surface); padding: 22px 22px 18px; text-align: center; position: relative; }
+.frame { position: relative; background: #fff; padding: 16px; display: inline-block; }
+.frame::before, .frame::after, .frame i::before, .frame i::after { content: ""; position: absolute; width: 34px; height: 34px; border: 6px solid var(--gold); }
+.frame::before { top: -6px; left: -6px; border-right: 0; border-bottom: 0; }
+.frame::after { top: -6px; right: -6px; border-left: 0; border-bottom: 0; }
+.frame i::before { bottom: -6px; left: -6px; border-right: 0; border-top: 0; }
+.frame i::after { bottom: -6px; right: -6px; border-left: 0; border-top: 0; }
+.frame img { display: block; width: min(300px, 70vw); height: auto; image-rendering: pixelated; }
+.scan { font: 800 22px/1.1 var(--display); text-transform: uppercase; letter-spacing: .04em; margin: 18px 0 4px; }
+.how { font-size: 14px; color: var(--muted); margin: 0 0 12px; }
+.url { font: 700 15px/1.3 var(--body); background: var(--ink); color: #fff; padding: 8px 10px; display: block; overflow-wrap: anywhere; user-select: all; text-decoration: none; }
+footer { max-width: 1040px; margin: 0 auto; padding: 0 24px 30px; font-size: 12.5px; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; border-top: 1px solid var(--rule); padding-top: 14px; }
+@media (max-width: 760px) { .poster { grid-template-columns: 1fr; gap: 28px; padding-top: 28px; } .inside ul { grid-template-columns: 1fr; } }
+</style></head><body>
+<div class="stripes" aria-hidden="true"></div>
+<main class="poster">
+  <div>
+    <p class="eyebrow">McKendree clinic · October 17, 2026</p>
+    <h1>Scan to get your <span>RefQuest</span> account ready</h1>
+    <p class="lede">This code opens a free, phone-friendly guide to RQ+, the RefQuest system you use for CWLOA clinics and game assignments. Work through it before you arrive. It takes about 15 minutes.</p>
+    <div class="inside">
+      <h2>What the guide walks you through</h2>
+      <ul>
+        <li>Signing in and picking the CWLOA portal</li>
+        <li>Blocking dates you can't work</li>
+        <li>Copying blocks to every assigner</li>
+        <li>Setting daily mileage limits</li>
+        <li>Answering assignments</li>
+        <li>Setting up RQ Pay safely</li>
+        <li>Who to contact for help</li>
+        <li>A practice checklist for class</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="frame"><i></i><img src="data:image/png;base64,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" alt="QR code that opens the RefQuest field guide at cboyd1914.github.io/mckendree-rq-guide"></div>
+    <p class="scan">Point your camera here</p>
+    <p class="how">Open your phone's camera, aim at the code, and tap the link that appears. No app needed.</p>
+    <a class="url" href="https://cboyd1914.github.io/mckendree-rq-guide/">cboyd1914.github.io/mckendree-rq-guide</a>
+  </div>
+</main>
+<footer><span>An independent guide from Carlos Boyd, head clinician for the October 17, 2026 McKendree clinic. It is not published or endorsed by CWLOA or RefQuest.</span><span>Revised October 5, 2026</span></footer>
+</body></html>
